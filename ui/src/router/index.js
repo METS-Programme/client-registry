@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Client from "../views/Client.vue";
 import Review from "../views/Review.vue";
 import AutoMatches from "../views/AutoMatches.vue";
+import AuditLogs from "../views/AuditLogs.vue";
 import Resolve from "../views/Resolve.vue";
 import CSVReport from "../views/CSVReport.vue";
 import AddUser from "../views/AddUser.vue";
@@ -47,6 +48,11 @@ const routes = [{
     path: "/csvreport",
     name: "csvreport",
     component: CSVReport
+  },
+  {
+    path : "/logs",
+    name : "auditlogs",
+    component : AuditLogs
   },
   {
     path: '/addUser',

@@ -19,10 +19,12 @@
     "menu_action_required": "Actions Required",
     "menu_auto_matches":"Auto-Matches",
     "menu_csv":"CSV Reports",
+    "menu_settings":"Settings",
     "menu_accounts":"Accounts",
     "menu_logout":"Logout",
 
     "account_add":"Add User",
+    "settings_logs" : "AuditLogs",
     "user":"User",
     "account_list":"User List",
     "account_change_password":"Change Password",

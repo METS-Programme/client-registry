@@ -40,14 +40,9 @@ export default {
   position: sticky;
   height: auto;
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: #e0e0e0;/* Grayish background */
   text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2px;
+  font-size: 14px;
+  color: #333; /* Dark text color for better contrast */
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark clipped-right>
-      <v-toolbar-title class="display-1">Open Client Registry</v-toolbar-title>
+      <v-toolbar-title class="display-1">National Client Registry</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn color="primary" to="/" v-if='!$store.state.denyAccess'>
@@ -24,13 +24,16 @@
         <v-menu bottom v-if='!$store.state.denyAccess && $store.state.auth.role !== "deduplication"'>
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="primary" dark v-bind="attrs" v-on="on">
-              <v-icon>mdi-settings</v-icon>
+              <v-icon>mdi-flash-outline</v-icon>
               {{ $t('menu_settings') }}
             </v-btn>
           </template>
           <v-list>
             <v-list-item to="/logs" v-if='!$store.state.denyAccess'>
               <v-icon>mdi-shape-rectangle-plus</v-icon> {{ $t('settings_logs') }}
+            </v-list-item>
+            <v-list-item to="/config" v-if='!$store.state.denyAccess'>
+              <v-icon>mdi-door-open</v-icon> {{ $t('settings_config') }}
             </v-list-item>
           </v-list>
         </v-menu>
@@ -85,6 +88,7 @@
       </v-dialog>
       <router-view />
     </v-main>
+    <AppFooter />
   </v-app>
 </template>
 
@@ -92,10 +96,14 @@
 import VueCookies from "vue-cookies";
 import axios from "axios";
 import { generalMixin } from "@/mixins/generalMixin";
+import AppFooter from "./views/AppFooter.vue";
 
 export default {
   name: "App",
   mixins: [generalMixin],
+  components: {
+    AppFooter
+  },
   data() {
     return {
       totalMatchIssues: 0,

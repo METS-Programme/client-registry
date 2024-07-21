@@ -1431,7 +1431,7 @@ const addPatient = (clientID, patientsBundle, callback) => {
                   identifier.value === undefined ||
                   identifier.value === "NA"
                 ) {
-                  const query = "_sort=-_lastUpdated&_count=1";
+                  const query = "entity-name:exact=InternalID&_sort=-_lastUpdated&_count=1";
                   try {
                     const resource = await new Promise((resolve, reject) => {
                       fhirWrapper.getResource(
@@ -1492,7 +1492,7 @@ const addPatient = (clientID, patientsBundle, callback) => {
                     config.get("systems:healthInformationNumber:uri")
                 )
               ) {
-                const query = "_sort=-_lastUpdated&_count=1";
+                const query = "entity-name:exact=InternalID&_sort=-_lastUpdated&_count=1";
                 try {
                   const resource = await new Promise((resolve, reject) => {
                     fhirWrapper.getResource(

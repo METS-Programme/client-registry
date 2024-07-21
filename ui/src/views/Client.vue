@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-tabs v-model="tab" background-color="secondary" dark>
       <v-tabs-slider></v-tabs-slider>
       <v-tab href="#record"

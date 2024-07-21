@@ -1,4 +1,5 @@
 <template>
+  <v-container fluid>
   <v-card>
     <v-card-title>
       {{ $t('settings_logs') }}
@@ -41,6 +42,7 @@
 
     </v-data-table>
   </v-card>
+  </v-container>
 </template>
 
 <script>

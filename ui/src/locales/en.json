@@ -25,6 +25,7 @@
 
     "account_add":"Add User",
     "settings_logs" : "AuditLogs",
+    "settings_config" : "Configurations",
     "user":"User",
     "account_list":"User List",
     "account_change_password":"Change Password",

@@ -42,7 +42,7 @@ export default {
   padding: 10px;
   background-color: #e0e0e0;/* Grayish background */
   text-align: center;
-  font-size: 14px;
+  font-size: 10px;
   color: #333; /* Dark text color for better contrast */
 }
 </style>

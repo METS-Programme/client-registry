@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Client from "../views/Client.vue";
 import Review from "../views/Review.vue";
-import Dashboard from "../views/Dashboard.vue";
 import AutoMatches from "../views/AutoMatches.vue";
 import AuditLogs from "../views/AuditLogs.vue";
 import Resolve from "../views/Resolve.vue";
@@ -25,11 +24,6 @@ const routes = [{
     path: "/",
     name: "home",
     component: Home
-  },
-  {
-    path :"/dashboard",
-    name :"dashboard",
-    component : Dashboard
   },
   {
     path: "/client/:clientId",

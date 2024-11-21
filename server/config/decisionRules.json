@@ -66,7 +66,7 @@
         "subcounty": {
           "algorithm": "jaro-winkler-similarity",
           "threshold": 0.85,
-          "fhirpath": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#subcounty').value",
+          "fhirpath": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#subcounty').valueString",
           "null_handling": "moderate",
           "null_handling_both": "moderate",
           "espath": "subCounty"
@@ -74,7 +74,7 @@
         "village": {
           "algorithm": "jaro-winkler-similarity",
           "threshold": 0.85,
-          "fhirpath": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#village').value",
+          "fhirpath": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#village').valueString",
           "null_handling": "moderate",
           "null_handling_both": "moderate",
           "espath": "village"

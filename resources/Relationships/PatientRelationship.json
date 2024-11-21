@@ -133,7 +133,7 @@
             },
             {
               "url": "name",
-              "valueString": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#subcounty').value"
+              "valueString": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#subcounty').valueString"
             }
           ]
         },
@@ -146,7 +146,7 @@
             },
             {
               "url": "name",
-              "valueString": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#village').value"
+              "valueString": "address.extension.where(url='http://fhir.openmrs.org/ext/address').extension.where(url='http://fhir.openmrs.org/ext/address#village').valueString"
             }
           ]
         },

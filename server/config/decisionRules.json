@@ -40,7 +40,7 @@
           "espath": "birthDate"
         },
         "phone": {
-          "algorithm": "normalized-levenshtein-similarity",
+          "algorithm": "exact",
           "threshold": 0.85,
           "fhirpath": "telecom.where(system='phone').value",
           "null_handling": "moderate",
@@ -48,7 +48,7 @@
           "espath": "phone"
         },
         "alternatePhone": {
-          "algorithm": "normalized-levenshtein-similarity",
+          "algorithm": "exact",
           "threshold": 0.85,
           "fhirpath": "telecom.where(system='phone').value",
           "null_handling": "moderate",
@@ -102,14 +102,14 @@
           "null_handling": "moderate",
           "null_handling_both": "moderate",
           "espath": "id"
-        },
-        "potentialMatchThreshold": 4,
-        "autoMatchThreshold": 6,
-        "filters": {
-          "gender": {
-            "fhirpath": "gender",
-            "espath": "gender"
-          }
+        }
+      },
+      "potentialMatchThreshold": 4,
+      "autoMatchThreshold": 6,
+      "filters": {
+        "gender": {
+          "fhirpath": "gender",
+          "espath": "gender"
         }
       }
     }

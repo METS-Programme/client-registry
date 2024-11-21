@@ -5,10 +5,6 @@
         {{ $t('settings_logs') }}
         <v-spacer />
       </v-card-title>
-      <v-card-title>
-        <v-text-field v-model="search" append-icon="mdi-magnify" :label="$t('search')" single-line
-          hide-details></v-text-field>
-      </v-card-title>
       <!-- table -->
       <v-data-table loading-text="Loading...AuditLogs Please wait" :headers="headers" :items="auditEvents"
         :loading="loading">

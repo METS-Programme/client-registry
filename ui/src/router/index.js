@@ -6,11 +6,11 @@ import Review from "../views/Review.vue";
 import AutoMatches from "../views/AutoMatches.vue";
 import AuditLogs from "../views/AuditLogs.vue";
 import Resolve from "../views/Resolve.vue";
-import CSVReport from "../views/CSVReport.vue";
 import AddUser from "../views/AddUser.vue";
 import usersList from "../views/usersList.vue"
 import Configuration from "../views/Configuration.vue"
 import ChangePassword from "../views/ChangePassword.vue"
+import UserManagement from "../views/UserManagement.vue";
 import Login from '@/views/Login.vue'
 import Logout from '@/components/Logout.vue'
 import VueCookies from 'vue-cookies'
@@ -46,11 +46,6 @@ const routes = [{
     component: Resolve
   },
   {
-    path: "/csvreport",
-    name: "csvreport",
-    component: CSVReport
-  },
-  {
     path : "/logs",
     name : "auditlogs",
     component : AuditLogs
@@ -59,6 +54,11 @@ const routes = [{
     path : "/config",
     name : "configuration",
     component : Configuration
+  },
+  {
+    path : "/user-management",
+    name : "users",
+    component : UserManagement
   },
   {
     path: '/addUser',

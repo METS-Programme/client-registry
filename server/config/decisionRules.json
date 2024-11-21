@@ -40,7 +40,7 @@
           "espath": "birthDate"
         },
         "phone": {
-          "algorithm": "Levenshtein",
+          "algorithm": "normalized-levenshtein-similarity",
           "threshold": 0.85,
           "fhirpath": "telecom.where(system='phone').value",
           "null_handling": "moderate",
@@ -48,7 +48,7 @@
           "espath": "phone"
         },
         "alternatePhone": {
-          "algorithm": "Levenshtein",
+          "algorithm": "normalized-levenshtein-similarity",
           "threshold": 0.85,
           "fhirpath": "telecom.where(system='phone').value",
           "null_handling": "moderate",

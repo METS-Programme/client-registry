@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark clipped-right>
-      <v-toolbar-title class="display-1">National Client Registry</v-toolbar-title>
+      <v-toolbar-title class="display-1">National Health Client Registry</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <!-- <v-btn color="primary" to="/dashboard" v-if='!$store.state.denyAccess && $store.state.auth.role !== "deduplication"'>

@@ -60,7 +60,7 @@
     "national_id": "National ID",
     "passport": "Passport",
     "art_number": "Art Number",
-    "health_identification_number" :" Health Identification Number",
+    "unique_patient_identifier" :" Unique Patient Identifier",
     "middle_names":"Middle names",
     "source": "Source",
     "source_id": "Source ID",

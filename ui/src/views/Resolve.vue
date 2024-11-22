@@ -272,13 +272,13 @@ export default {
         { text: this.$t('given_names'), value: "given" },
         { text: this.$t('birth_date'), value: "birthDate" },
         { text: this.$t('gender'), value: "gender" },
-        { text: this.$t('health_identification_number'), value: "ohin" },
+        { text: this.$t('unique_patient_identifier'), value: "ohin" },
         { text: this.$t('full_view'), value: "view", sortable: false },
         { text: "Scores", value: "score", sortable: false },
       ],
       dates: { birthDate: true },
       fields: { source: this.$t('submitting_system'), source_id: this.$t('source_id'), family: this.$t('surname'), given: this.$t('given_names'),
-        gender: this.$t('gender'), birthDate: this.$t('birth_date'), phone: this.$t('phone'), ohin: this.$t('health_identification_number')
+        gender: this.$t('gender'), birthDate: this.$t('birth_date'), phone: this.$t('phone'), ohin: this.$t('unique_patient_identifier')
       },
       score_matrix: [],
       score_headers: [ { text: "Source", value: "name" } ],

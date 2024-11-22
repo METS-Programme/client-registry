@@ -272,13 +272,12 @@ export default {
         { text: this.$t('given_names'), value: "given" },
         { text: this.$t('birth_date'), value: "birthDate" },
         { text: this.$t('gender'), value: "gender" },
-        { text: this.$t('unique_patient_identifier'), value: "ohin" },
         { text: this.$t('full_view'), value: "view", sortable: false },
         { text: "Scores", value: "score", sortable: false },
       ],
       dates: { birthDate: true },
       fields: { source: this.$t('submitting_system'), source_id: this.$t('source_id'), family: this.$t('surname'), given: this.$t('given_names'),
-        gender: this.$t('gender'), birthDate: this.$t('birth_date'), phone: this.$t('phone'), ohin: this.$t('unique_patient_identifier')
+        gender: this.$t('gender'), birthDate: this.$t('birth_date'), phone: this.$t('phone'),
       },
       score_matrix: [],
       score_headers: [ { text: "Source", value: "name" } ],
@@ -287,8 +286,6 @@ export default {
         { text: this.$t('source_id'), value: "source_id" },
         { text: this.$t('original_cr_id'), value: "ouid" },
         { text: this.$t('new_cr_id'), value: "uid" },
-        { text: this.$t('old_hin'), value: "ohin" }, 
-        { text: this.$t('new_hin'), value: "nhin" }
 
       ],
       review_list: [],

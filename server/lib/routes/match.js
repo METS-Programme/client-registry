@@ -1216,6 +1216,56 @@ router.post('/matches', (req, res) => {
           }
         }
       }
+
+
+      // nationality
+      let nationality = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        nationality = entry.resource.address[0]?.country ?? "Not Set"; 
+      }
+
+      // village
+      let village = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        village = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#village").valueString ?? "Not Set"; 
+      }
+
+
+      // parish 
+      let parish = ""
+
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        parish = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#parish").valueString ?? "Not Set"; 
+      }
+
+
+      // sub_county
+      let sub_county = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        sub_county = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+      
+      // county
+      let county = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+       county = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+
+      // district
+      let district = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        district = entry.resource.address[0]?.district ?? "Not Set"; 
+      }
+
+
+      // country_of_residence
+      if(entry.resource){}
+
+
+      // next_of_kin
+      if(entry.resource){}
       
       let primaryPatient = {
         id: patient.id,
@@ -1224,15 +1274,15 @@ router.post('/matches', (req, res) => {
         family: name.family,
         birthDate: patient.birthDate,
         phone,
-        nationality : "Not Set",
+        nationality : nationality,
         marital_status : "Not Set",
-        registering_facility :"Not Set",
-        village : "Not Set",
-        parish : "Not Set",
-        sub_county : "Not Set",
-        county : "Not Set",
-        district : "Not Set",
-        country_of_residence: "Not Set",
+        registering_facility :entry.resource.managingOrganization.display,
+        village :  village,
+        parish :  parish,
+        sub_county : sub_county,
+        county :  county,
+        district :  district,
+        country_of_residence:  nationality,
         next_of_kin : "Not Set",
         uid: goldenLink,
         ouid: goldenLink,
@@ -1441,6 +1491,55 @@ router.get('/potential-matches/:id', (req, res) => {
           }
         }
       }
+
+      // nationality
+      let nationality = ""
+      if( patient !== null && patient.address.length > 0){
+        nationality = patient.address[0]?.country ?? "Not Set"; 
+      }
+
+      // village
+      let village = ""
+      if( patient !== null && patient.address.length > 0){
+        village = patient.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#village").valueString ?? "Not Set"; 
+      }
+
+
+      // parish 
+      let parish = ""
+
+      if( patient !== null && patient.address.length > 0){
+        parish = patient.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#parish").valueString ?? "Not Set"; 
+      }
+
+
+      // sub_county
+      let sub_county = ""
+      if( patient !== null && patient.address.length > 0){
+        sub_county = patient.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+      
+      // county
+      let county = ""
+      if( patient !== null && patient.address.length > 0){
+       county = patient.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+
+      // district
+      let district = ""
+      if( patient !== null && patient.address.length > 0){
+        district = patient.address[0]?.district ?? "Not Set"; 
+      }
+
+
+      // country_of_residence
+      if(patient){}
+
+
+      // next_of_kin
+      if(patient){}
       
       let primaryPatient = {
         id: patient.id,
@@ -1449,15 +1548,15 @@ router.get('/potential-matches/:id', (req, res) => {
         family: name.family,
         birthDate: patient.birthDate,
         phone,
-        nationality : "Not Set",
+        nationality : nationality,
         marital_status : "Not Set",
-        registering_facility :"Not Set",
-        village : "Not Set",
-        parish : "Not Set",
-        sub_county : "Not Set",
-        county : "Not Set",
-        district : "Not Set",
-        country_of_residence: "Not Set",
+        registering_facility : patient.managingOrganization.display,
+        village :  village,
+        parish :  parish,
+        sub_county : sub_county,
+        county :  county,
+        district :  district,
+        country_of_residence:  nationality,
         next_of_kin : "Not Set",
         ohin:hin,
         nhin:hin,
@@ -1607,21 +1706,71 @@ router.get(`/get-match-issues`, (req, res) => {
           }
         }
       }
+
+      // nationality
+      let nationality = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        nationality = entry.resource.address[0]?.country ?? "Not Set"; 
+      }
+
+      // village
+      let village = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        village = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#village").valueString ?? "Not Set"; 
+      }
+
+
+      // parish 
+      let parish = ""
+
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        parish = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#parish").valueString ?? "Not Set"; 
+      }
+
+
+      // sub_county
+      let sub_county = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        sub_county = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+      
+      // county
+      let county = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+       county = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+
+      // district
+      let district = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        district = entry.resource.address[0]?.district ?? "Not Set"; 
+      }
+
+
+      // country_of_residence
+      if(entry.resource){}
+
+
+      // next_of_kin
+      if(entry.resource){}
+
       let review = {
         id: entry.resource.id,
         gender: entry.resource.gender,
         family: name.family,
         given,
         birthDate: entry.resource.birthDate,
-        nationality : "Not Set",
+        nationality : nationality,
         marital_status : "Not Set",
-        registering_facility :"Not Set",
-        village : "Not Set",
-        parish : "Not Set",
-        sub_county : "Not Set",
-        county : "Not Set",
-        district : "Not Set",
-        country_of_residence: "Not Set",
+        registering_facility :entry.resource.managingOrganization.display,
+        village :  village,
+        parish :  parish,
+        sub_county : sub_county,
+        county :  county,
+        district :  district,
+        country_of_residence:  nationality,
         next_of_kin : "Not Set",
         hin: hin,
         uid: link,
@@ -1678,21 +1827,71 @@ router.get(`/get-new-auto-matches`, (req, res) => {
         }
       }
 
+      // nationality
+      let nationality = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        nationality = entry.resource.address[0]?.country ?? "Not Set"; 
+      }
+
+      // village
+      let village = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        village = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#village").valueString ?? "Not Set"; 
+      }
+
+
+      // parish 
+      let parish = ""
+
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        parish = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#parish").valueString ?? "Not Set"; 
+      }
+
+
+      // sub_county
+      let sub_county = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        sub_county = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+      
+      // county
+      let county = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+       county = entry.resource.address[0]?.extension.find((ext)=>ext.url === "http://fhir.openmrs.org/ext/address").extension.find((ext)=>ext.url ==="http://fhir.openmrs.org/ext/address#subcounty").valueString ?? "Not Set"; 
+      }
+
+
+      // district
+      let district = ""
+      if(entry.resource && entry.resource !== null && entry.resource.address.length > 0){
+        district = entry.resource.address[0]?.district ?? "Not Set"; 
+      }
+
+
+      // country_of_residence
+      if(entry.resource){}
+
+
+      // next_of_kin
+      if(entry.resource){}
+
+
       let review = {
         id: entry.resource.id,
         gender: entry.resource.gender,
         family: name.family,
         given,
         birthDate: entry.resource.birthDate,
-        nationality : "Not Set",
+        nationality : nationality,
         marital_status : "Not Set",
         registering_facility :entry.resource.managingOrganization.display,
-        village :  "Not Set",
-        parish :  "Not Set",
-        sub_county : "Not Set",
-        county :  "Not Set",
-        district :  "Not Set",
-        country_of_residence:  "Not Set",
+        village :  village,
+        parish :  parish,
+        sub_county : sub_county,
+        county :  county,
+        district :  district,
+        country_of_residence:  nationality,
         next_of_kin : "Not Set",
         hin: hin,
         uid: link,

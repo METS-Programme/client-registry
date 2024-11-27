@@ -2955,7 +2955,7 @@ router.post("/unbreak-match", (req, res) => {
 
 router.get(`/cr-stats`, (req, res) => {
   const facilitiesURL = `${FHIR_BASE_URL}/fhir/Patient`;
-  const patientsURL = `${FHIR_BASE_URL}/Patient?_tag=5c827da5-4858-4f3d-a50c-62ece001efea&_total=accurate`;
+  const patientsURL = `${FHIR_BASE_URL}/Patient?_total=accurate&_tag:not=5c827da5-4858-4f3d-a50c-62ece001efea`;
   const autoMatchesURL = `${FHIR_BASE_URL}/Patient?_tag=autoMatches&_summary=count`;
   const conflictMatchesURL = `${FHIR_BASE_URL}/Patient?_tag=conflictMatches&_summary=count`;
   const potentialMatchesURL = `${FHIR_BASE_URL}/Patient?_tag=potentialMatches&_summary=count`;
@@ -2974,11 +2974,11 @@ router.get(`/cr-stats`, (req, res) => {
   // Perform all API requests concurrently
   Promise.all([
     fetchData(facilitiesURL),
-    fetchData(autoMatchesURL),
     fetchData(patientsURL),
     fetchData(conflictMatchesURL),
     fetchData(potentialMatchesURL),
     fetchData(allMatchIssuesURL),
+    fetchData(autoMatchesURL),
   ])
     .then(
       ([
@@ -2986,8 +2986,9 @@ router.get(`/cr-stats`, (req, res) => {
         patientsData,
         conflictData,
         potentialData,
-        autoData,
         matchesData,
+        autoData,
+
       ]) => {
         const totalFacilities = facilitiesData.total || 0;
         const totalPatients = patientsData.total || 0;
@@ -2999,9 +3000,11 @@ router.get(`/cr-stats`, (req, res) => {
         res.status(200).json({
           totalFacilities,
           totalPatients,
-          totalMatches,
-          potentialMatches,
           conflictMatches,
+
+          potentialMatches,
+          totalMatches,
+
           autoMatches,
         });
       }

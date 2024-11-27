@@ -187,8 +187,6 @@ export default {
             stats.autoMatches,
           ];
 
-          console.log("chart data-->",this.chartData.datasets[0].data)
-
           // Update metrics dynamically
           this.metrics = [
             {

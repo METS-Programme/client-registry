@@ -72,23 +72,35 @@
     "internalid": {
       "uri": [
         "http://health.go.ug/cr/internalid",
-        "http://clientregistry.org/openmrs",
-        "http://clientregistry.org/clinicmaster",
-        "http://clientregistry.org/eafya",
-        "http://clientregistry.org/ugandaemr"
+        "http://health.go.ug/openmrs",
+        "http://health.go.ug/clinicmaster",
+        "http://health.go.ug/eafya",
+        "http://health.go.ug/ugandaemr"
       ],
       "displayName": "Internal ID"
     },
     "nationalid": {
-      "uri": "http://health.go.ug/cr/nationalid",
+      "uri": "http://health.go.ug/nationalid",
       "displayName": "National ID"
     },
     "passport": {
-      "uri": "http://health.go.ug/cr/passport",
+      "uri": "http://health.go.ug/passport",
       "displayName": "Passport"
     },
+    "artnumber": {
+      "uri": "http://health.go.ug/artnumber",
+      "displayName": "ART Number"
+    },
+    "license": {
+      "uri": "http://health.go.ug/license",
+      "displayName": "Driver's License"
+    },
+    "refugee": {
+      "uri": "http://health.go.ug/refugee",
+      "displayName": "Refugee Number"
+    },
     "healthInformationNumber": {
-      "uri": "http://health.go.ug/cr/hin",
+      "uri": "http://health.go.ug/hin",
       "displayName": "Health Information Number"
     },
     "brokenMatch": {

@@ -46,10 +46,7 @@
     "resolvePotentialOfPotentials": true
   },
   "clients": [
-    {
-      "id": "openmrs",
-      "displayName": "OpenMRS"
-    },
+
     {
       "id": "clinicmaster",
       "displayName": "ClinicMaster"
@@ -61,10 +58,6 @@
     {
       "id": "ugandaemr",
       "displayName": "UgandaEMR"
-    },
-    {
-      "id": "lims",
-      "displayName": "Lab Info Management System"
     }
   ],
   "systems": {

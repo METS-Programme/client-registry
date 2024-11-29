@@ -175,6 +175,58 @@
               "valueString": "identifier.where(use='official').value"
             }
           ]
+        },
+        {
+          "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+          "extension": [
+            {
+              "url": "label",
+              "valueString": "nationalid"
+            },
+            {
+              "url": "name",
+              "valueString": "identifier.where(system='http://health.go.ug/nationalid').value"
+            }
+          ]
+        },
+        {
+          "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+          "extension": [
+            {
+              "url": "label",
+              "valueString": "passport"
+            },
+            {
+              "url": "name",
+              "valueString": "identifier.where(system='http://health.go.ug/passport').value"
+            }
+          ]
+        },
+        {
+          "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+          "extension": [
+            {
+              "url": "label",
+              "valueString": "license"
+            },
+            {
+              "url": "name",
+              "valueString": "identifier.where(system='http://health.go.ug/license').value"
+            }
+          ]
+        },
+        {
+          "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+          "extension": [
+            {
+              "url": "label",
+              "valueString": "refugee"
+            },
+            {
+              "url": "name",
+              "valueString": "identifier.where(system='http://health.go.ug/refugee').value"
+            }
+          ]
         }
       ]
     }

@@ -46,10 +46,7 @@
     "resolvePotentialOfPotentials": true
   },
   "clients": [
-    {
-      "id": "openmrs",
-      "displayName": "OpenMRS"
-    },
+
     {
       "id": "clinicmaster",
       "displayName": "ClinicMaster"
@@ -61,34 +58,41 @@
     {
       "id": "ugandaemr",
       "displayName": "UgandaEMR"
-    },
-    {
-      "id": "lims",
-      "displayName": "Lab Info Management System"
     }
   ],
   "systems": {
     "CRBaseURI": "http://openclientregistry.org/fhir",
     "internalid": {
       "uri": [
-        "http://health.go.ug/cr/internalid",
-        "http://clientregistry.org/openmrs",
-        "http://clientregistry.org/clinicmaster",
-        "http://clientregistry.org/eafya",
-        "http://clientregistry.org/ugandaemr"
+        "http://health.go.ug/internalid",
+        "http://health.go.ug/clinicmaster",
+        "http://health.go.ug/eafya",
+        "http://health.go.ug/ugandaemr"
       ],
       "displayName": "Internal ID"
     },
     "nationalid": {
-      "uri": "http://health.go.ug/cr/nationalid",
+      "uri": "http://health.go.ug/nationalid",
       "displayName": "National ID"
     },
     "passport": {
-      "uri": "http://health.go.ug/cr/passport",
+      "uri": "http://health.go.ug/passport",
       "displayName": "Passport"
     },
+    "artnumber": {
+      "uri": "http://health.go.ug/artnumber",
+      "displayName": "ART Number"
+    },
+    "license": {
+      "uri": "http://health.go.ug/license",
+      "displayName": "Driver's License"
+    },
+    "refugee": {
+      "uri": "http://health.go.ug/refugee",
+      "displayName": "Refugee Number"
+    },
     "healthInformationNumber": {
-      "uri": "http://health.go.ug/cr/hin",
+      "uri": "http://health.go.ug/hin",
       "displayName": "Health Information Number"
     },
     "brokenMatch": {

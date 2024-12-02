@@ -95,13 +95,37 @@
           "null_handling_both": "moderate",
           "espath": "mothersName"
         },
-        "id": {
-          "algorithm": "jaro-winkler-similarity",
+        "nationalid": {
+          "algorithm": "exact",
           "threshold": 0.85,
-          "fhirpath": "identifier.where(use='official').value",
+          "fhirpath": "identifier.where(system='http://health.go.ug/nationalid').value",
           "null_handling": "moderate",
           "null_handling_both": "moderate",
-          "espath": "id"
+          "espath": "nationalid"
+        },
+        "passport": {
+          "algorithm": "exact",
+          "threshold": 0.85,
+          "fhirpath": "identifier.where(system='http://health.go.ug/passport').value",
+          "null_handling": "moderate",
+          "null_handling_both": "moderate",
+          "espath": "passport"
+        },
+        "license": {
+          "algorithm": "exact",
+          "threshold": 0.85,
+          "fhirpath": "identifier.where(system='http://health.go.ug/license').value",
+          "null_handling": "moderate",
+          "null_handling_both": "moderate",
+          "espath": "license"
+        },  
+        "refugee": {
+          "algorithm": "exact",
+          "threshold": 0.85,
+          "fhirpath": "identifier.where(system='http://health.go.ug/refugee').value",
+          "null_handling": "moderate",
+          "null_handling_both": "moderate",
+          "espath": "refugee"
         }
       },
       "potentialMatchThreshold": 4,

@@ -223,7 +223,7 @@
             },
             {
               "url": "fhirpath",
-              "valueString": "identifier.where(system='http://health.go.ug/cr/nationalid').last().value"
+              "valueString": "identifier.where(system='http://health.go.ug/nationalid').last().value"
             },
             {
               "url": "searchable",
@@ -244,7 +244,7 @@
             },
             {
               "url": "fhirpath",
-              "valueString": "identifier.where(system='http://health.go.ug/cr/passport').last().value"
+              "valueString": "identifier.where(system='http://health.go.ug/passport').last().value"
             },
             {
               "url": "searchable",
@@ -265,7 +265,7 @@
             },
             {
               "url": "fhirpath",
-              "valueString": "identifier.where(system='http://health.go.ug/cr/hin').last().value"
+              "valueString": "identifier.where(system='http://health.go.ug/hin').last().value"
             },
             {
               "url": "searchable",

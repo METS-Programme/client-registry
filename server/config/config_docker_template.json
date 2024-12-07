@@ -64,7 +64,7 @@
     "CRBaseURI": "http://openclientregistry.org/fhir",
     "internalid": {
       "uri": [
-        "http://health.go.ug/internalid",
+        "http://health.go.ug/cr/internalid",
         "http://health.go.ug/clinicmaster",
         "http://health.go.ug/eafya",
         "http://health.go.ug/ugandaemr"
